@@ -1,5 +1,7 @@
-﻿from gui.history_tab import HistoryTab
+﻿from gui.current_run_tab import CurrentRunTab
+from gui.history_tab import HistoryTab
 from gui.settings_tab import SettingsTab
+from gui.current_run_tab import CurrentRunTab
 import customtkinter as ctk
 
 class MainWindow:
@@ -24,10 +26,7 @@ class MainWindow:
 
         # Current Run
         self.tabview.add("Current Run")
-        current_label = ctk.CTkLabel(self.tabview.tab("Current Run"),
-                                     text="Current Run - TODO",
-                                     font=("Arial", 20))
-        current_label.pack(pady=20)
+        self.current_run_tab = CurrentRunTab(self)
 
         # History
         self.tabview.add("History")

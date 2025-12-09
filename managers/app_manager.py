@@ -39,6 +39,7 @@ class AppManager:
         self.encryption_manager = EncryptionManager(master_password)
         self.settings.set_setting('salt', self.encryption_manager.get_salt())
         self.is_authenticated = True
+        self.run_manager = RunManager(self)
 
     def add_mt5_account(self, account_id, password, server, name=None):
         if not self.is_authenticated:
